@@ -1,0 +1,420 @@
+import type { Region } from './types';
+
+/**
+ * Bundled lore. Used offline and as a fallback when Supabase isn't configured.
+ * The same data is seeded into Supabase by supabase/migrations/0002_seed_regions.sql
+ * (generated with `npm run seed:sql`).
+ *
+ * Text is original fan-written summary, not copied from official sources.
+ */
+export const REGIONS: Region[] = [
+  {
+    id: 'piltover',
+    name: 'Piltover',
+    epithet: 'The City of Progress',
+    tagline: 'Brass towers, hexgates and the bright promise of invention.',
+    icon: 'cog-outline',
+    accent: ['#E8B04A', '#7A4A12'],
+    capital: 'Piltover',
+    governance: 'Council of merchant clans',
+    magicStance: 'Harnessed through hextech',
+    champions: ['Caitlyn', 'Vi', 'Jayce', 'Heimerdinger', 'Camille', 'Ezreal'],
+    featured: true,
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'Piltover sits on the cliffs above the Sun Gate, a canal that links two oceans. Every ship that passes pays a toll, and that wealth funds a city where inventors are treated like nobility.',
+          'Its skyline is a forest of brass spires, clockwork bridges and academies. Patronage from the great merchant clans decides which ideas live and which are quietly shelved.',
+        ],
+      },
+      {
+        id: 'hextech',
+        title: 'The Hextech Revolution',
+        paragraphs: [
+          'Hextech fuses rare crystals with precise engineering, letting ordinary people wield what was once the domain of mages. Lamps, prosthetics and gates that fold distance have all followed.',
+          'The same breakthrough brought new questions: who controls the crystals, who profits, and what happens when the technology is turned into a weapon.',
+        ],
+        quote: {
+          text: 'Every gear we turn moves the world a little further from the dark.',
+          attribution: 'Inscription above a Piltover academy',
+        },
+      },
+      {
+        id: 'society',
+        title: 'Society & Order',
+        paragraphs: [
+          'The Wardens and the city enforcers keep the polished streets calm, but their patrols rarely reach the lift-lines that descend into Zaun.',
+          'Progress Day, the yearly festival of unveiled inventions, is both a celebration and a marketplace where reputations are made in an afternoon.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'zaun',
+    name: 'Zaun',
+    epithet: 'The Undercity',
+    tagline: 'Chem-lit alleys where genius and desperation share the same air.',
+    icon: 'flask-outline',
+    accent: ['#2BD9A3', '#0B3B3A'],
+    capital: 'The Undercity',
+    governance: 'Chem-barons and shifting alliances',
+    magicStance: 'Chemtech, unrestricted',
+    champions: ['Jinx', 'Ekko', 'Viktor', 'Singed', 'Warwick', 'Zeri'],
+    featured: true,
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'Zaun sprawls beneath Piltover in the canyon walls of the Sun Gate. Shafts of daylight barely reach the lower levels, which glow instead with chemlamp green and neon violet.',
+          'With no grand council to answer to, Zaunites invent fast and without permission. The result is dazzling, dangerous chemtech that Piltover both fears and quietly buys.',
+        ],
+      },
+      {
+        id: 'chemtech',
+        title: 'Chemtech & the Gray',
+        paragraphs: [
+          'Chemtech drives everything from augmented limbs to street-level weaponry. Its byproduct is the Gray, a heavy haze that pools in the deepest districts and shortens lives.',
+          'Those who can afford filters climb toward the Promenade; those who cannot learn to breathe shallow and dream loud.',
+        ],
+      },
+      {
+        id: 'culture',
+        title: 'Culture of the Lanes',
+        paragraphs: [
+          'Loyalty in Zaun is local: to a family, a gang, a workshop. Graffiti, pirate radio and underground fight pits are how news and legends spread.',
+        ],
+        quote: {
+          text: 'Up top they build for the future. Down here we build to see tomorrow.',
+          attribution: 'Entresol street saying',
+        },
+      },
+    ],
+  },
+  {
+    id: 'ionia',
+    name: 'Ionia',
+    epithet: 'The First Lands',
+    tagline: 'Spirit-touched isles where balance is a way of life.',
+    icon: 'flower-outline',
+    accent: ['#F48FB1', '#4A1C40'],
+    capital: 'Many provinces, no single seat',
+    governance: 'Provincial elders and the Ionian Council',
+    magicStance: 'Woven into nature itself',
+    champions: ['Ahri', 'Yasuo', 'Irelia', 'Karma', 'Master Yi', 'Shen'],
+    featured: true,
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'Ionia is an archipelago where the boundary between the physical and spirit realms is thin. Trees change colour with emotion, rivers remember, and the land itself seems to listen.',
+          'For centuries its people pursued harmony rather than conquest, which made the Noxian invasion all the more devastating.',
+        ],
+      },
+      {
+        id: 'war',
+        title: 'The Noxian Invasion',
+        paragraphs: [
+          'When Noxus landed, the provinces had no unified army. Resistance grew from monasteries, villages and lone blades until the invaders were finally driven out.',
+          'Victory left scars. A new generation now argues whether Ionia must harden itself or stay true to its old ways.',
+        ],
+      },
+      {
+        id: 'philosophy',
+        title: 'Paths of Balance',
+        paragraphs: [
+          'Orders such as the Kinkou watch over the balance between worlds, while Wuju schools and Navori monasteries teach discipline of body and spirit.',
+        ],
+        quote: {
+          text: 'The river does not fight the stone. In time, the stone becomes the river’s shape.',
+          attribution: 'Ionian proverb',
+        },
+      },
+    ],
+  },
+  {
+    id: 'noxus',
+    name: 'Noxus',
+    epithet: 'The Empire of Strength',
+    tagline: 'Iron banners and the creed that anyone can rise through might.',
+    icon: 'sword-cross',
+    accent: ['#E84057', '#3A0A12'],
+    capital: 'Noxus Prime (Bastion)',
+    governance: 'Trifarix: Might, Guile and Vision',
+    magicStance: 'Used as a weapon of the state',
+    champions: ['Darius', 'Swain', 'Katarina', 'LeBlanc', 'Draven', 'Samira'],
+    featured: true,
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'Noxus is a sprawling, ever-expanding empire. Conquered peoples are offered a place within it, and talent, not birth, is meant to decide how high a citizen can climb.',
+          'The capital is built atop the ruins of an ancient fortress, its black towers a constant reminder of the empire’s brutal origins.',
+        ],
+      },
+      {
+        id: 'trifarix',
+        title: 'The Trifarix',
+        paragraphs: [
+          'Leadership is shared among three representatives: one who embodies military Might, one who masters Guile, and one who holds the Vision of the empire’s future.',
+          'Behind the official council, older powers whisper. The shadowy Black Rose has steered Noxian politics for longer than most citizens suspect.',
+        ],
+      },
+      {
+        id: 'ethos',
+        title: 'The Noxian Ethos',
+        paragraphs: [
+          'Strength in Noxus is not only the strength of arms. Diplomats, spies and artisans can all prove their worth, though the battlefield remains the fastest road to glory.',
+        ],
+        quote: {
+          text: 'Noxus does not ask where you came from. It asks what you can become.',
+          attribution: 'Recruitment banner, Basilich',
+        },
+      },
+    ],
+  },
+  {
+    id: 'demacia',
+    name: 'Demacia',
+    epithet: 'The Shining Kingdom',
+    tagline: 'White stone, unbending law and a deep distrust of magic.',
+    icon: 'shield-outline',
+    accent: ['#8FB8FF', '#1A2A4E'],
+    capital: 'The Great City of Demacia',
+    governance: 'Monarchy guided by noble houses',
+    magicStance: 'Suppressed with petricite',
+    champions: ['Garen', 'Lux', 'Jarvan IV', 'Fiora', 'Sylas', 'Galio'],
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'Founded by refugees fleeing the devastation of ancient mage wars, Demacia was built to be a sanctuary. Its walls are lined with petricite, a pale stone that absorbs magic.',
+          'Honour, duty and justice are the kingdom’s pillars, and its soldiers are among the most disciplined in Runeterra.',
+        ],
+      },
+      {
+        id: 'magic',
+        title: 'The Mage Question',
+        paragraphs: [
+          'Those born with magic are watched, registered and often hidden away by the Mageseekers. For some Demacians this keeps them safe; for others it is a quiet cruelty.',
+          'A rising mage revolt has forced the crown to confront whether its sanctuary has become a cage.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'freljord',
+    name: 'The Freljord',
+    epithet: 'The Frozen North',
+    tagline: 'Ice, legend and three sisters whose feud shaped the world.',
+    icon: 'snowflake',
+    accent: ['#7FD8FF', '#123048'],
+    capital: 'No single capital',
+    governance: 'Rival tribes and war-chiefs',
+    magicStance: 'Ancestral and elemental',
+    champions: ['Ashe', 'Sejuani', 'Lissandra', 'Braum', 'Tryndamere', 'Ornn'],
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'The Freljord is a harsh land of glaciers and endless winter. Tribes survive through strength, kinship and stories passed around the fire.',
+          'Beneath the ice lie relics of the demi-gods who once walked here, and some of them may not be as gone as people hope.',
+        ],
+      },
+      {
+        id: 'sisters',
+        title: 'The Three Sisters',
+        paragraphs: [
+          'Legends tell of Avarosa, Serylda and Lissandra, three sisters who led the ancient Freljord. Their alliance shattered, and the betrayal echoes in every modern tribal war.',
+        ],
+        quote: {
+          text: 'Where the ice remembers, the people must not forget.',
+          attribution: 'Avarosan oath',
+        },
+      },
+    ],
+  },
+  {
+    id: 'shurima',
+    name: 'Shurima',
+    epithet: 'The Fallen Empire',
+    tagline: 'A desert empire risen again beneath a golden sun disc.',
+    icon: 'white-balance-sunny',
+    accent: ['#FFC857', '#5A3A0A'],
+    capital: 'Shurima, City of the Sun',
+    governance: 'The returned Emperor and desert tribes',
+    magicStance: 'Divine Ascension',
+    champions: ['Azir', 'Nasus', 'Renekton', 'Sivir', 'Xerath', 'Taliyah'],
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'Shurima was once the greatest empire of the ancient world, its power focused through the Sun Disc that transformed chosen mortals into Ascended beings.',
+          'A catastrophic ritual buried the capital in sand for millennia. Now the city has risen, and its emperor has returned to reclaim what was lost.',
+        ],
+      },
+      {
+        id: 'ascended',
+        title: 'The Ascended',
+        paragraphs: [
+          'Ascended warriors carried the shape of beasts and the strength of gods. When the empire fell, some became guardians, while others turned into the Darkin, imprisoned in their own weapons.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'targon',
+    name: 'Targon',
+    epithet: 'The Mountain of the Stars',
+    tagline: 'A peak so high its summit touches celestial power.',
+    icon: 'star-four-points-outline',
+    accent: ['#B39DFF', '#22184A'],
+    capital: 'Mount Targon',
+    governance: 'Rakkor tribe and the Solari/Lunari',
+    magicStance: 'Celestial Aspects',
+    champions: ['Leona', 'Diana', 'Pantheon', 'Taric', 'Zoe', 'Aurelion Sol'],
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'Mount Targon rises above the clouds in the far south-west. Pilgrims attempt the climb believing that those who reach the summit may be chosen by a celestial Aspect.',
+          'Most never return. Those who do are changed beyond recognition.',
+        ],
+      },
+      {
+        id: 'sun-moon',
+        title: 'Sun and Moon',
+        paragraphs: [
+          'The Solari worship the sun and dominate the mountain’s slopes. The Lunari, who honour the moon, were driven into hiding, but their faith never died.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bilgewater',
+    name: 'Bilgewater',
+    epithet: 'The Port of Plunder',
+    tagline: 'Smugglers, sea monsters and fortunes won with a single roll.',
+    icon: 'anchor',
+    accent: ['#3EC1D3', '#0E2A3A'],
+    capital: 'Bilgewater harbour',
+    governance: 'Whoever holds the docks',
+    magicStance: 'Old sea magic and pragmatic bargains',
+    champions: ['Miss Fortune', 'Gangplank', 'Twisted Fate', 'Graves', 'Pyke', 'Nautilus'],
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'Bilgewater is a port city built on the bones of sea monsters, perched on the Blue Flame Isles. Anything can be bought here, and almost anything can be stolen.',
+          'Power changes hands quickly. A captain can rule the docks one week and feed the fish the next.',
+        ],
+      },
+      {
+        id: 'harrowing',
+        title: 'The Harrowing',
+        paragraphs: [
+          'Every year, a black mist rolls in from the Shadow Isles. Locals bar their doors and light their lanterns, praying the spirits pass them by.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'shadow-isles',
+    name: 'The Shadow Isles',
+    epithet: 'The Cursed Isles',
+    tagline: 'Once a paradise of knowledge, now shrouded in the Black Mist.',
+    icon: 'ghost-outline',
+    accent: ['#4FE3C1', '#0A1F1C'],
+    capital: 'Helia (ruined)',
+    governance: 'The Ruined King and his wraiths',
+    magicStance: 'Necromantic Black Mist',
+    champions: ['Thresh', 'Viego', 'Kalista', 'Hecarim', 'Yorick', 'Gwen'],
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'The Blessed Isles were once home to scholars who guarded the world’s knowledge. A desperate king’s attempt to restore his lost love unleashed the Ruination.',
+          'Now the isles are trapped between life and death, and the Black Mist binds every soul that perishes there.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ixtal',
+    name: 'Ixtal',
+    epithet: 'The Hidden Jungle',
+    tagline: 'Elemental mages sealed away in a living, breathing jungle.',
+    icon: 'leaf',
+    accent: ['#9BE15D', '#1D3A12'],
+    capital: 'Ixaocan',
+    governance: 'The Yun Tal elite',
+    magicStance: 'Elemental mastery',
+    champions: ['Qiyana', 'Neeko', 'Nidalee', 'Rengar', 'Malphite', 'Milio'],
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'Ixtal withdrew from the world long ago, hiding its golden city of Ixaocan behind dense jungle and powerful wards.',
+          'Its people practise elemental magic with astonishing precision, and its ruling families guard both their secrets and their borders.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bandle-city',
+    name: 'Bandle City',
+    epithet: 'Home of the Yordles',
+    tagline: 'A whimsical realm that exists a little sideways from everywhere else.',
+    icon: 'mushroom-outline',
+    accent: ['#FFB86B', '#4A2A12'],
+    capital: 'Bandle City',
+    governance: 'Mostly a matter of opinion',
+    magicStance: 'Innate and joyful',
+    champions: ['Teemo', 'Tristana', 'Lulu', 'Veigar', 'Poppy', 'Vex'],
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'Bandle City is the home of the yordles, magical beings who experience the world with heightened senses. Its paths shift depending on who walks them.',
+          'Yordles wander the material realm in disguise, drawn to adventure, curiosity and, occasionally, mischief.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'void',
+    name: 'The Void',
+    epithet: 'The Endless Hunger',
+    tagline: 'An unknowable nothing that seeks to unmake creation.',
+    icon: 'eye-outline',
+    accent: ['#C77DFF', '#24103A'],
+    capital: 'Beyond reality',
+    governance: 'The Watchers',
+    magicStance: 'Antithetical to all existence',
+    champions: ["Kai'Sa", "Kha'Zix", "Vel'Koz", "Cho'Gath", "Bel'Veth", 'Kassadin'],
+    sections: [
+      {
+        id: 'overview',
+        title: 'Overview',
+        paragraphs: [
+          'The Void is not a place so much as an absence. Where it breaks through, reality warps, and creatures of terrible hunger crawl into the world.',
+          'Ancient Shuriman sorcerers first opened the way. Ever since, defenders across Runeterra have fought to keep it closed.',
+        ],
+      },
+    ],
+  },
+];
+
+export const getRegion = (id: string) => REGIONS.find((r) => r.id === id);
